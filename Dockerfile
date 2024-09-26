@@ -9,6 +9,7 @@ COPY . /app
 
 # Install the required Python packages
 RUN pip install flask
+RUN pip install flask flask_sqlalchemy
 
 # Expose the port the app will run on
 EXPOSE 5000
