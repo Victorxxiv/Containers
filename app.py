@@ -1,6 +1,11 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+
+# use environment variables to get the database URL
+app.config['SQLALCHEMY_DATABASE_URS'] = 'postgresql://user:password@db:5432/mydb'
+db = SQLAlchemy(app)
 
 @app.route('/')
 def home():
